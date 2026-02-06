@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './ProductModal.css'
 
 export default function ProductModal({ product, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const navigate = useNavigate()
 
   if (!product) return null
 
@@ -16,6 +18,11 @@ export default function ProductModal({ product, onClose }) {
     setCurrentImageIndex((prev) =>
       prev === 0 ? product.images.length - 1 : prev - 1
     )
+  }
+
+  const handleInquiry = () => {
+    onClose()
+    navigate(`/contact?product=${encodeURIComponent(product.name)}`)
   }
 
   return (
@@ -74,7 +81,7 @@ export default function ProductModal({ product, onClose }) {
 
           <button
             className="modal-inquiry-btn"
-            onClick={() => alert('Contact feature coming soon!')}
+            onClick={handleInquiry}
           >
             Inquire About This Piece
           </button>

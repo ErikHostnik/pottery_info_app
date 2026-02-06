@@ -31,3 +31,8 @@
 .header-nav a:hover {
   opacity: 0.8;
 }
+
+.header-nav a.active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+}
