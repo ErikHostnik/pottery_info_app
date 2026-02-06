@@ -1,0 +1,26 @@
+.info-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f7f4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+.info-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #6b6b6b;
+}
+
+.info-tagline {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  font-style: italic;
+  color: #8b8b8b;
+}
