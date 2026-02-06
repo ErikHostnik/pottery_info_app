@@ -76,6 +76,27 @@
   resize: vertical;
 }
 
+/* ---- Status messages ---- */
+.contact-status {
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.contact-status--success {
+  background-color: #f0f7f0;
+  color: #2d6a2e;
+  border: 1px solid #b6d7a8;
+}
+
+.contact-status--error {
+  background-color: #fdf0f0;
+  color: #a33;
+  border: 1px solid #e4b3b3;
+}
+
 .contact-submit-btn {
   width: 100%;
   padding: 14px;
@@ -90,8 +111,13 @@
   transition: background-color 0.3s;
 }
 
-.contact-submit-btn:hover {
+.contact-submit-btn:hover:not(:disabled) {
   background-color: #6d5940;
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* ---- Sidebar ---- */

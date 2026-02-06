@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_PUBLIC_KEY,
+} from '../config/emailjs'
 import './Contact.css'
 
 export default function Contact() {
@@ -13,6 +19,8 @@ export default function Contact() {
     subject: '',
     message: '',
   })
+  const [sending, setSending] = useState(false)
+  const [status, setStatus] = useState(null) // { type: 'success' | 'error', text: string }
 
   useEffect(() => {
     if (productName) {
@@ -28,10 +36,37 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setSending(true)
+    setStatus(null)
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone || 'Not provided',
+      subject: formData.subject,
+      message: formData.message,
+    }
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      )
+      setStatus({ type: 'success', text: 'Thank you! Your message has been sent successfully.' })
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      setStatus({
+        type: 'error',
+        text: 'Something went wrong. Please try again or email us directly.',
+      })
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -45,6 +80,12 @@ export default function Contact() {
 
       <div className="contact-container">
         <form className="contact-form" onSubmit={handleSubmit}>
+          {status && (
+            <div className={`contact-status contact-status--${status.type}`}>
+              {status.text}
+            </div>
+          )}
+
           <div className="form-group">
             <label htmlFor="name">Name *</label>
             <input
@@ -109,8 +150,12 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="contact-submit-btn">
-            Send Message
+          <button
+            type="submit"
+            className="contact-submit-btn"
+            disabled={sending}
+          >
+            {sending ? 'Sending...' : 'Send Message'}
           </button>
         </form>
 
