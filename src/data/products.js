@@ -45,6 +45,7 @@ export const collections = [
         name: 'Handmade Mug',
         price: '25\u20ac',
         images: [Pot3, Pot3_2],
+        care: 'very nice',
       },
     ],
   },

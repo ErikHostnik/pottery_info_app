@@ -5,7 +5,17 @@ import './CollectionGrid.css'
 export default function CollectionGrid() {
   return (
     <section className="collection-grid-section">
-      <h2 className="collection-grid-title">Our Collections</h2>
+      <h2 className="collection-grid-title">
+        {'Our Collections'.split('').map((char, i, arr) => (
+          <span
+            key={i}
+            className="collection-title-char"
+            style={{ animationDelay: `${(arr.length - 1 - i) * 0.04}s` }}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        ))}
+      </h2>
       <div className="collection-grid">
         {collections.map(collection => (
           <Link

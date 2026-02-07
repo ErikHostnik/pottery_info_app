@@ -9,6 +9,22 @@
   text-align: center;
   margin-bottom: 40px;
   color: #4a4a4a;
+  cursor: default;
+}
+
+.collection-title-char {
+  display: inline-block;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.collection-grid-title:hover .collection-title-char {
+  animation: jump-reverse 0.5s ease forwards;
+}
+
+@keyframes jump-reverse {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-8px); color: #8b7355; }
+  100% { transform: translateY(0); }
 }
 
 .collection-grid {
