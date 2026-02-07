@@ -1,12 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './ProductModal.css'
 
 export default function ProductModal({ product, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [zoomed, setZoomed] = useState(false)
+  const [zoomOrigin, setZoomOrigin] = useState({ x: 50, y: 50 })
   const navigate = useNavigate()
 
+  const closeZoom = useCallback(() => setZoomed(false), [])
+
+  useEffect(() => {
+    if (!zoomed) return
+    const handleKey = (e) => { if (e.key === 'Escape') closeZoom() }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [zoomed, closeZoom])
+
   if (!product) return null
+
+  const handleZoomMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    setZoomOrigin({ x, y })
+  }
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
@@ -48,7 +66,17 @@ export default function ProductModal({ product, onClose }) {
             src={product.images[currentImageIndex]}
             alt={product.name}
             className="modal-image"
+            onClick={() => setZoomed(true)}
+            title="Click to zoom"
           />
+
+          <button
+            className="modal-zoom-btn"
+            onClick={() => setZoomed(true)}
+            title="Zoom in"
+          >
+            &#x1F50D;
+          </button>
 
           {product.images.length > 1 && (
             <div className="modal-image-counter">
@@ -56,6 +84,21 @@ export default function ProductModal({ product, onClose }) {
             </div>
           )}
         </div>
+
+        {zoomed && (
+          <div className="zoom-overlay" onClick={closeZoom}>
+            <div
+              className="zoom-container"
+              onMouseMove={handleZoomMove}
+              onClick={closeZoom}
+              style={{
+                backgroundImage: `url(${product.images[currentImageIndex]})`,
+                backgroundPosition: `${zoomOrigin.x}% ${zoomOrigin.y}%`,
+              }}
+            />
+            <div className="zoom-hint">Click anywhere to close</div>
+          </div>
+        )}
 
         <div className="modal-details">
           <h2>{product.name}</h2>
