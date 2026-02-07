@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
+import About from './pages/About'
 import CollectionPage from './pages/CollectionPage'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection/:collectionId" element={<CollectionPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
