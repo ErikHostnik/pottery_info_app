@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { products } from '../data/products'
 import ProductModal from './ProductModal'
 import './ProductGrid.css'
 
-export default function ProductGrid() {
+export default function ProductGrid({ products }) {
   const [selectedProduct, setSelectedProduct] = useState(null)
 
   const openModal = (product) => {
