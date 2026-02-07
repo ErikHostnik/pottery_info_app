@@ -16,12 +16,23 @@ export default function ProductGrid({ products }) {
   return (
     <>
       <section className="product-grid-section">
-        <h2 className="product-grid-title">Our Collection</h2>
+        <h2 className="product-grid-title">
+          {'Our Collection'.split('').map((char, i) => (
+            <span
+              key={i}
+              className="product-grid-title-char"
+              style={{ animationDelay: `${i * 0.04}s` }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          ))}
+        </h2>
         <div className="product-grid">
-          {products.map(product => (
+          {products.map((product, index) => (
             <div
               key={product.id}
               className="product-card"
+              style={{ animationDelay: `${0.3 + index * 0.12}s` }}
               onClick={() => openModal(product)}
             >
               <div className="product-image-container">

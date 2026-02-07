@@ -22,7 +22,17 @@ export default function CollectionPage() {
     <div className="collection-page">
       <div className="collection-header">
         <Link to="/" className="back-link">&larr; Back to Collections</Link>
-        <h1 className="collection-page-title">{collection.name}</h1>
+        <h1 className="collection-page-title">
+          {collection.name.split('').map((char, i) => (
+            <span
+              key={i}
+              className="collection-page-title-char"
+              style={{ animationDelay: `${i * 0.04}s` }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          ))}
+        </h1>
         <p className="collection-page-description">{collection.description}</p>
       </div>
       <ProductGrid products={collection.items} />

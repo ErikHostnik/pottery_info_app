@@ -9,6 +9,24 @@
   text-align: center;
   margin-bottom: 40px;
   color: #4a4a4a;
+  animation: fade-up 0.5s ease both;
+  animation-delay: 0.15s;
+  cursor: default;
+}
+
+.product-grid-title-char {
+  display: inline-block;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.product-grid-title:hover .product-grid-title-char {
+  animation: jump-product-title 0.5s ease forwards;
+}
+
+@keyframes jump-product-title {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-8px); color: #8b7355; }
+  100% { transform: translateY(0); }
 }
 
 .product-grid {
@@ -25,6 +43,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  animation: fade-up 0.6s ease both;
 }
 
 .product-card:hover {
@@ -64,4 +83,15 @@
   font-size: 1.3rem;
   color: #8b7355;
   font-weight: bold;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
