@@ -20,6 +20,10 @@ export default function CollectionPage() {
 
   return (
     <div className="collection-page">
+      <div
+        className="collection-bg"
+        style={{ backgroundImage: `url(${collection.image})` }}
+      />
       <div className="collection-header">
         <Link to="/" className="back-link">&larr; Nazaj na kolekcije</Link>
         <h1 className="collection-page-title">

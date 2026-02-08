@@ -1,6 +1,27 @@
 .collection-page {
   min-height: 60vh;
-  background: linear-gradient(180deg, #f3ece4 0%, #f9f7f4 40%, #eee8df 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.collection-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(243, 236, 228, 0.75) 0%, rgba(249, 247, 244, 0.7) 50%, rgba(238, 232, 223, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .collection-header {
@@ -9,6 +30,8 @@
   max-width: 1200px;
   margin: 0 auto;
   animation: fade-down 0.6s ease both;
+  position: relative;
+  z-index: 2;
 }
 
 .collection-page-title {
@@ -35,8 +58,8 @@
 }
 
 .collection-page-description {
-  font-size: 1.1rem;
-  color: #6b5e50;
+  font-size: 1.3rem;
+  color: #25211c;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
