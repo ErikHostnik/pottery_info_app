@@ -6,6 +6,7 @@ import Pot3 from '../assets/Pot3.webp'
 import Pot3_2 from '../assets/Pot3_2.jpg'
 import Stone1 from '../assets/collections/MicaStudio_sopek_IMG_8879_3.JPG'
 import Nature1 from '../assets/collections/MicaStudio107_IMG_7726.JPG'
+import Asymmetrical1 from '../assets/collections/MicaStudio121_IMG_7771.JPG'
 
 export const collections = [
   {
@@ -37,10 +38,10 @@ export const collections = [
     ],
   },
   {
-    id: 'skodelice',
-    name: 'Skodelice',
-    description: 'Ro\u010Dno izdelane skodelice, ustvarjene s skrbjo za va\u0161 vsakdanji ritual.',
-    image: Pot3,
+    id: 'a-symmetrical',
+    name: 'A-SYMMETRICAL',
+    description: 'Kolekcija A-SYMMETRICAL temelji na iskanju ravnote\u017Eja med redom in nepravilnostjo. Izdelki, \u017Egani pri 1245 \u00B0C, temeljijo na ob\u010Dutku za simetrijo, urejenost in jasne forme, a hkrati zavestno vna\u0161ajo nesimetri\u010Dnost. Gre za ravnovesje med pravilnim in nepravilnim \u2013 kjer vsak kos nosi svojo zgodbo.',
+    image: Asymmetrical1,
     items: [
       {
         id: 3,
