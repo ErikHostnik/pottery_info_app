@@ -1,11 +1,11 @@
 .header {
-  background-color: #8cb059;
+  background: linear-gradient(135deg, #7a9e4a 0%, #8cb059 100%);
   color: #fff;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .header-title {

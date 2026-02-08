@@ -74,7 +74,7 @@ export default function Contact() {
       <div className="contact-hero">
         <h2 className="contact-title">Stopite v stik</h2>
         <p className="contact-subtitle">
-          Z veseljem vas bomo slišali. Če imate vprašanje o izdelku, naročilu po meri ali čemerkoli drugem — naša ekipa vam z veseljem pomaga.
+          Če imate vprašanje o izdelku, naročilu po meri ali čemerkoli drugem — z veseljem vam pomagam.
         </p>
       </div>
 
@@ -161,11 +161,6 @@ export default function Contact() {
 
         <aside className="contact-sidebar">
           <div className="contact-info-card">
-            <h3>Obiščite naš studio</h3>
-            <p>123 Clay Lane<br />Artisan District<br />Portland, OR 97201</p>
-          </div>
-
-          <div className="contact-info-card">
             <h3>Kontaktni podatki</h3>
             <p>
               <strong>Telefon:</strong> (503) 555-0142<br />
@@ -174,16 +169,10 @@ export default function Contact() {
           </div>
 
           <div className="contact-info-card">
-            <h3>Delovni čas</h3>
+            <h3>Odzivni čas</h3>
             <p>
-              Pon – Pet: 10:00 – 18:00<br />
-              Sobota: 10:00 – 16:00<br />
-              Nedelja: Zaprto
+              Na sporočila se trudim odgovoriti v najkrajšem možnem času, običajno v roku 24 ur.
             </p>
-          </div>
-
-          <div className="contact-map-placeholder">
-            <span>Zemljevid kmalu na voljo</span>
           </div>
         </aside>
       </div>

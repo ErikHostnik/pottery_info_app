@@ -1,7 +1,7 @@
 .info-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f9f7f4;
+  background: linear-gradient(180deg, #f3ece4 0%, #f9f7f4 100%);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -9,8 +9,9 @@
 .info-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #4a4a4a;
+  color: #5a4a3a;
   cursor: default;
+  letter-spacing: 0.02em;
 }
 
 .info-title-char {
@@ -24,19 +25,19 @@
 
 @keyframes jump {
   0% { transform: translateY(0); }
-  40% { transform: translateY(-8px); color: #8b7355; }
+  40% { transform: translateY(-8px); color: #c4a882; }
   100% { transform: translateY(0); }
 }
 
 .info-description {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #6b6b6b;
+  color: #5e5548;
 }
 
 .info-tagline {
   font-size: 1.1rem;
   margin-top: 20px;
   font-style: italic;
-  color: #8b8b8b;
+  color: #a0845e;
 }
