@@ -4,13 +4,14 @@ import Pot2 from '../assets/Pot2.webp'
 import Pot2_2 from '../assets/Pot2_2.webp'
 import Pot3 from '../assets/Pot3.webp'
 import Pot3_2 from '../assets/Pot3_2.jpg'
+import Stone1 from '../assets/collections/MicaStudio_sopek_IMG_8879_3.JPG'
 
 export const collections = [
   {
-    id: 'vaze',
-    name: 'Vaze',
-    description: 'Elegantne ročno izdelane vaze, ki vsakemu prostoru vdihnejo življenje.',
-    image: Pot1,
+    id: 'stone',
+    name: 'STONE',
+    description: 'Navdihnjena s kamninami, kolekcija STONE združuje moč narave in prefinjeno obliko ročnega dela. Izdelki so oblikovani iz valjane šamotirane gline, katere zrna ustvarjajo subtilno teksturo, ki spominja na kamnine. Žgani pri 1245 °C, dosežejo robustnost in obstojnost, a hkrati ohranjajo prijetno toplino dotika. V njih se zrcali eleganca kamnin – hladna na pogled, a topla v svoji pripovedi.',
+    image: Stone1,
     items: [
       {
         id: 1,
