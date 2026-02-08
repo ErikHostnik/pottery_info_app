@@ -7,42 +7,42 @@ import Pot3_2 from '../assets/Pot3_2.jpg'
 
 export const collections = [
   {
-    id: 'vases',
-    name: 'Vases',
-    description: 'Elegant handcrafted vases to bring life to any space.',
+    id: 'vaze',
+    name: 'Vaze',
+    description: 'Elegantne ročno izdelane vaze, ki vsakemu prostoru vdihnejo življenje.',
     image: Pot1,
     items: [
       {
         id: 1,
-        name: 'Ceramic Vase',
+        name: 'Keramična vaza',
         price: '45\u20ac',
         images: [Pot1, Pot1_2],
       },
     ],
   },
   {
-    id: 'bowls',
-    name: 'Bowls',
-    description: 'Beautifully shaped bowls for everyday use and display.',
+    id: 'sklede',
+    name: 'Sklede',
+    description: 'Lepo oblikovane sklede za vsakodnevno uporabo in razstavo.',
     image: Pot2,
     items: [
       {
         id: 2,
-        name: 'Stoneware Bowl',
+        name: 'Kameninska skleda',
         price: '30\u20ac',
         images: [Pot2, Pot2_2],
       },
     ],
   },
   {
-    id: 'mugs',
-    name: 'Mugs',
-    description: 'Handmade mugs crafted with care for your daily ritual.',
+    id: 'skodelice',
+    name: 'Skodelice',
+    description: 'Ročno izdelane skodelice, ustvarjene s skrbjo za vaš vsakdanji ritual.',
     image: Pot3,
     items: [
       {
         id: 3,
-        name: 'Handmade Mug',
+        name: 'Ročno izdelana skodelica',
         price: '25\u20ac',
         images: [Pot3, Pot3_2],
         care: 'very nice',

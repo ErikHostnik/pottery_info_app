@@ -26,8 +26,8 @@ export default function Contact() {
     if (productName) {
       setFormData((prev) => ({
         ...prev,
-        subject: `Inquiry about ${productName}`,
-        message: `Hi, I'm interested in the "${productName}" piece. Could you please provide more information?`,
+        subject: `Povpraševanje o ${productName}`,
+        message: `Pozdravljeni, zanima me izdelek "${productName}". Mi lahko posredujete več informacij?`,
       }))
     }
   }, [productName])
@@ -44,7 +44,7 @@ export default function Contact() {
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      phone: formData.phone || 'Not provided',
+      phone: formData.phone || 'Ni podano',
       subject: formData.subject,
       message: formData.message,
     }
@@ -56,13 +56,13 @@ export default function Contact() {
         templateParams,
         EMAILJS_PUBLIC_KEY,
       )
-      setStatus({ type: 'success', text: 'Thank you! Your message has been sent successfully.' })
+      setStatus({ type: 'success', text: 'Hvala! Vaše sporočilo je bilo uspešno poslano.' })
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
     } catch (error) {
       console.error('EmailJS error:', error)
       setStatus({
         type: 'error',
-        text: 'Something went wrong. Please try again or email us directly.',
+        text: 'Nekaj je šlo narobe. Prosimo, poskusite znova ali nam pišite neposredno.',
       })
     } finally {
       setSending(false)
@@ -72,9 +72,9 @@ export default function Contact() {
   return (
     <section className="contact-page">
       <div className="contact-hero">
-        <h2 className="contact-title">Get in Touch</h2>
+        <h2 className="contact-title">Stopite v stik</h2>
         <p className="contact-subtitle">
-          We'd love to hear from you. Whether you have a question about a piece, custom orders, or anything else — our team is ready to help.
+          Z veseljem vas bomo slišali. Če imate vprašanje o izdelku, naročilu po meri ali čemerkoli drugem — naša ekipa vam z veseljem pomaga.
         </p>
       </div>
 
@@ -87,7 +87,7 @@ export default function Contact() {
           )}
 
           <div className="form-group">
-            <label htmlFor="name">Name *</label>
+            <label htmlFor="name">Ime *</label>
             <input
               type="text"
               id="name"
@@ -95,12 +95,12 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
-              placeholder="Your full name"
+              placeholder="Vaše polno ime"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email *</label>
+            <label htmlFor="email">E-pošta *</label>
             <input
               type="email"
               id="email"
@@ -108,24 +108,24 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              placeholder="your@email.com"
+              placeholder="vas@email.com"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">Phone (optional)</label>
+            <label htmlFor="phone">Telefon (neobvezno)</label>
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="(555) 123-4567"
+              placeholder="031 123 456"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="subject">Subject *</label>
+            <label htmlFor="subject">Zadeva *</label>
             <input
               type="text"
               id="subject"
@@ -133,12 +133,12 @@ export default function Contact() {
               value={formData.subject}
               onChange={handleChange}
               required
-              placeholder="What is this about?"
+              placeholder="O čem gre?"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Message *</label>
+            <label htmlFor="message">Sporočilo *</label>
             <textarea
               id="message"
               name="message"
@@ -146,7 +146,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               rows="6"
-              placeholder="Tell us what you're looking for..."
+              placeholder="Povejte nam, kaj vas zanima..."
             />
           </div>
 
@@ -155,35 +155,35 @@ export default function Contact() {
             className="contact-submit-btn"
             disabled={sending}
           >
-            {sending ? 'Sending...' : 'Send Message'}
+            {sending ? 'Pošiljanje...' : 'Pošlji sporočilo'}
           </button>
         </form>
 
         <aside className="contact-sidebar">
           <div className="contact-info-card">
-            <h3>Visit Our Studio</h3>
+            <h3>Obiščite naš studio</h3>
             <p>123 Clay Lane<br />Artisan District<br />Portland, OR 97201</p>
           </div>
 
           <div className="contact-info-card">
-            <h3>Contact Info</h3>
+            <h3>Kontaktni podatki</h3>
             <p>
-              <strong>Phone:</strong> (503) 555-0142<br />
-              <strong>Email:</strong> hello@potterystudio.com
+              <strong>Telefon:</strong> (503) 555-0142<br />
+              <strong>E-pošta:</strong> hello@potterystudio.com
             </p>
           </div>
 
           <div className="contact-info-card">
-            <h3>Studio Hours</h3>
+            <h3>Delovni čas</h3>
             <p>
-              Mon – Fri: 10am – 6pm<br />
-              Saturday: 10am – 4pm<br />
-              Sunday: Closed
+              Pon – Pet: 10:00 – 18:00<br />
+              Sobota: 10:00 – 16:00<br />
+              Nedelja: Zaprto
             </p>
           </div>
 
           <div className="contact-map-placeholder">
-            <span>Map Coming Soon</span>
+            <span>Zemljevid kmalu na voljo</span>
           </div>
         </aside>
       </div>

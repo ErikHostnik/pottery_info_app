@@ -67,13 +67,13 @@ export default function ProductModal({ product, onClose }) {
             alt={product.name}
             className="modal-image"
             onClick={() => setZoomed(true)}
-            title="Click to zoom"
+            title="Kliknite za povečavo"
           />
 
           <button
             className="modal-zoom-btn"
             onClick={() => setZoomed(true)}
-            title="Zoom in"
+            title="Povečaj"
           >
             &#x1F50D;
           </button>
@@ -96,7 +96,7 @@ export default function ProductModal({ product, onClose }) {
                 backgroundPosition: `${zoomOrigin.x}% ${zoomOrigin.y}%`,
               }}
             />
-            <div className="zoom-hint">Click anywhere to close</div>
+            <div className="zoom-hint">Kliknite kjerkoli za zapiranje</div>
           </div>
         )}
 
@@ -106,19 +106,19 @@ export default function ProductModal({ product, onClose }) {
           <div className="modal-price">{product.price}</div>
 
           <div className="modal-section">
-            <h3>Description</h3>
+            <h3>Opis</h3>
             <p className="modal-description">
-              {product.description || 'This beautiful handcrafted pottery piece is made with love and care. Each item is unique and showcases the artisan\'s skill and attention to detail. Perfect for adding a touch of elegance to your home.'}
+              {product.description || 'Ta čudovit ročno izdelan keramični kos je narejen z ljubeznijo in skrbnostjo. Vsak izdelek je edinstven in odraža mojstrovo spretnost ter pozornost do detajlov. Popoln za pridih elegance v vašem domu.'}
             </p>
           </div>
 
           <div className="modal-section">
-            <h3>Details</h3>
+            <h3>Podrobnosti</h3>
             <ul className="modal-details-list">
-              <li><strong>Material:</strong> {product.material || 'Ceramic/Stoneware'}</li>
-              <li><strong>Finish:</strong> {product.finish || 'Glazed'}</li>
-              <li><strong>Care:</strong> {product.care || 'Hand wash recommended'}</li>
-              <li><strong>Made:</strong> {product.madeIn || 'Handmade with love'}</li>
+              <li><strong>Material:</strong> {product.material || 'Keramika/kamenina'}</li>
+              <li><strong>Površina:</strong> {product.finish || 'Glazirana'}</li>
+              <li><strong>Vzdrževanje:</strong> {product.care || 'Priporočamo ročno pranje'}</li>
+              <li><strong>Izdelava:</strong> {product.madeIn || 'Ročno izdelano z ljubeznijo'}</li>
             </ul>
           </div>
 
@@ -126,7 +126,7 @@ export default function ProductModal({ product, onClose }) {
             className="modal-inquiry-btn"
             onClick={handleInquiry}
           >
-            Inquire About This Piece
+            Povprašajte o tem izdelku
           </button>
         </div>
       </div>

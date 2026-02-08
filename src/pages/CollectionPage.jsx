@@ -11,8 +11,8 @@ export default function CollectionPage() {
     return (
       <div className="collection-page">
         <div className="collection-not-found">
-          <h2>Collection not found</h2>
-          <Link to="/" className="back-link">&larr; Back to Collections</Link>
+          <h2>Kolekcija ni bila najdena</h2>
+          <Link to="/" className="back-link">&larr; Nazaj na kolekcije</Link>
         </div>
       </div>
     )
@@ -21,7 +21,7 @@ export default function CollectionPage() {
   return (
     <div className="collection-page">
       <div className="collection-header">
-        <Link to="/" className="back-link">&larr; Back to Collections</Link>
+        <Link to="/" className="back-link">&larr; Nazaj na kolekcije</Link>
         <h1 className="collection-page-title">
           {collection.name.split('').map((char, i) => (
             <span

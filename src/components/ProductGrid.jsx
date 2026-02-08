@@ -17,7 +17,7 @@ export default function ProductGrid({ products }) {
     <>
       <section className="product-grid-section">
         <h2 className="product-grid-title">
-          {'Our Collection'.split('').map((char, i) => (
+          {'Naša kolekcija'.split('').map((char, i) => (
             <span
               key={i}
               className="product-grid-title-char"

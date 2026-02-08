@@ -6,9 +6,9 @@ export default function Header() {
     <header className="header">
       <h1 className="header-title">Mica Studio</h1>
       <nav className="header-nav">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/">Domov</NavLink>
+        <NavLink to="/about">O nas</NavLink>
+        <NavLink to="/contact">Kontakt</NavLink>
       </nav>
     </header>
   )

@@ -6,7 +6,7 @@ export default function CollectionGrid() {
   return (
     <section className="collection-grid-section">
       <h2 className="collection-grid-title">
-        {'Our Collections'.split('').map((char, i, arr) => (
+        {'Naše kolekcije'.split('').map((char, i, arr) => (
           <span
             key={i}
             className="collection-title-char"

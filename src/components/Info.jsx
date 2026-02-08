@@ -1,6 +1,6 @@
 import './Info.css'
 
-const title = 'Handcrafted Pottery'
+const title = 'Ročna keramika'
 
 export default function Info() {
   return (
@@ -17,11 +17,11 @@ export default function Info() {
         ))}
       </h2>
       <p className="info-description">
-        Each piece is lovingly handmade with care and attention to detail.
-        Discover unique ceramic creations that bring warmth and beauty to your home.
+        Vsak kos je z ljubeznijo ročno izdelan s skrbnostjo in pozornostjo do detajlov.
+        Odkrijte edinstvene keramične stvaritve, ki vašemu domu prinašajo toplino in lepoto.
       </p>
       <p className="info-tagline">
-        Made with passion, crafted for you.
+        Ustvarjeno s strastjo, oblikovano za vas.
       </p>
     </section>
   )
