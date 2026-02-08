@@ -107,7 +107,7 @@
   font-family: inherit;
   background: linear-gradient(135deg, #a0845e 0%, #8b7355 100%);
   color: #fff;
-  border: none;
+  border: 2px solid rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.2s;
@@ -174,6 +174,19 @@
 
 .contact-info-card strong {
   color: #5a4a3a;
+}
+
+.contact-map-placeholder {
+  background: linear-gradient(145deg, #ebe3d7 0%, #ddd4c6 100%);
+  border-radius: 12px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0845e;
+  font-size: 1rem;
+  font-style: italic;
+  border: 1px solid rgba(196, 168, 130, 0.2);
 }
 
 /* ---- Responsive ---- */
