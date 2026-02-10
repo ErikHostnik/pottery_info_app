@@ -25,14 +25,27 @@
   text-decoration: none;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: opacity 0.2s;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-.header-nav a:hover {
-  opacity: 0.8;
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
-.header-nav a.active {
-  border-bottom: 2px solid #fff;
-  padding-bottom: 2px;
+.header-nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.header-nav a.active::after {
+  width: 100%;
+  left: 0;
 }

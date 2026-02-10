@@ -1,10 +1,11 @@
+import ScrollReveal from './ScrollReveal'
 import './Info.css'
 
 const title = 'Ročna keramika'
 
 export default function Info() {
   return (
-    <section className="info-section">
+    <ScrollReveal as="section" className="info-section">
       <h2 className="info-title">
         {title.split('').map((char, i) => (
           <span
@@ -23,6 +24,6 @@ export default function Info() {
       <p className="info-tagline">
         Ustvarjeno s strastjo, oblikovano za vas.
       </p>
-    </section>
+    </ScrollReveal>
   )
 }

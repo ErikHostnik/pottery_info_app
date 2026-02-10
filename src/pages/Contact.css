@@ -138,7 +138,7 @@
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(139, 115, 85, 0.08);
   border: 1px solid rgba(196, 168, 130, 0.15);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.7s ease;
 }
 
 .contact-info-card:hover {

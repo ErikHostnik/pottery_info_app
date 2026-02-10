@@ -6,6 +6,7 @@ import {
   EMAILJS_TEMPLATE_ID,
   EMAILJS_PUBLIC_KEY,
 } from '../config/emailjs'
+import ScrollReveal from '../components/ScrollReveal'
 import './Contact.css'
 
 export default function Contact() {
@@ -71,15 +72,15 @@ export default function Contact() {
 
   return (
     <section className="contact-page">
-      <div className="contact-hero">
+      <ScrollReveal className="contact-hero">
         <h2 className="contact-title">Stopite v stik</h2>
         <p className="contact-subtitle">
           Če imate vprašanje o izdelku, naročilu po meri ali čemerkoli drugem — z veseljem vam pomagam.
         </p>
-      </div>
+      </ScrollReveal>
 
       <div className="contact-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <ScrollReveal as="form" className="contact-form" onSubmit={handleSubmit}>
           {status && (
             <div className={`contact-status contact-status--${status.type}`}>
               {status.text}
@@ -157,9 +158,9 @@ export default function Contact() {
           >
             {sending ? 'Pošiljanje...' : 'Pošlji sporočilo'}
           </button>
-        </form>
+        </ScrollReveal>
 
-        <aside className="contact-sidebar">
+        <ScrollReveal as="aside" className="contact-sidebar" delay={0.2}>
           <div className="contact-info-card">
             <h3>Kontaktni podatki</h3>
             <p>
@@ -174,7 +175,7 @@ export default function Contact() {
               Na sporočila se trudim odgovoriti v najkrajšem možnem času, običajno v roku 24 ur.
             </p>
           </div>
-        </aside>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,18 +1,19 @@
 import aboutPhoto from '../assets/real/MicaStudio.JPG'
+import ScrollReveal from '../components/ScrollReveal'
 import './About.css'
 
 export default function About() {
   return (
     <section className="about-page">
-      <div className="about-hero">
+      <ScrollReveal className="about-hero">
         <h2 className="about-title">O meni</h2>
         <p className="about-subtitle">
           Ročno izdelana keramika, zakoreninjena v tradiciji, oblikovana s strastjo.
         </p>
-      </div>
+      </ScrollReveal>
 
       <div className="about-content">
-        <div className="about-intro">
+        <ScrollReveal className="about-intro">
           <div className="about-photo-wrapper">
             <img
               src={aboutPhoto}
@@ -38,9 +39,9 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="about-section">
+        <ScrollReveal className="about-section">
           <h3>Moj postopek</h3>
           <p>
             Vsak kos se začne kot surova glina, skrbno izbrana glede na teksturo
@@ -49,9 +50,9 @@ export default function About() {
             Delam s kameninsko in šamotirano glino ter uporabljam
             za živila varne glazure v zemeljskih, naravnih odtenkih.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="about-section">
+        <ScrollReveal className="about-section">
           <h3>Moje vrednote</h3>
           <div className="about-values">
             <div className="about-value-card">
@@ -76,7 +77,7 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )
